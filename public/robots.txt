@@ -1,0 +1,28 @@
+# https://www.robotstxt.org/robotstxt.html
+
+User-agent: *
+Allow: /$
+Allow: /about
+Allow: /features
+Allow: /how-it-works
+Allow: /reviews
+Allow: /blog
+Allow: /faq
+Allow: /contact
+Allow: /privacy-policy
+Allow: /terms-and-conditions
+Allow: /withdrawal-policy
+Allow: /referral-rules
+Allow: /auth
+Allow: /register
+
+# Disallow private user states and backend APIs
+Disallow: /dashboard/
+Disallow: /dashboard/*
+Disallow: /admin/
+Disallow: /admin/*
+Disallow: /api/
+Disallow: /api/*
+
+# Sitemap declaration
+Sitemap: https://taskvexa.xyz/sitemap.xml

@@ -1,0 +1,6 @@
+{
+  "name": "Taskvexa",
+  "description": "A premium SaaS task-based earning application with OTP verification.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

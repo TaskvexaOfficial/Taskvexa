@@ -1,0 +1,119 @@
+<svg viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Background Radial Gradient (Fintech Dark Navy) -->
+    <radialGradient id="bg-grad" cx="50%" cy="50%" r="70%" fx="30%" fy="30%">
+      <stop offset="0%" stop-color="#021643" />
+      <stop offset="60%" stop-color="#010e2d" />
+      <stop offset="100%" stop-color="#000619" />
+    </radialGradient>
+
+    <!-- Metallic Blue Outer Ring Gradient -->
+    <linearGradient id="ring-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0077ff" />
+      <stop offset="30%" stop-color="#0055cc" />
+      <stop offset="50%" stop-color="#00bfff" />
+      <stop offset="70%" stop-color="#0033aa" />
+      <stop offset="100%" stop-color="#0055cc" />
+    </linearGradient>
+
+    <!-- T Top Bar Gradient (Bright Neon Cyan to Blue) -->
+    <linearGradient id="t-top-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00e5ff" />
+      <stop offset="50%" stop-color="#00a2ff" />
+      <stop offset="100%" stop-color="#0055ff" />
+    </linearGradient>
+
+    <!-- T Stem Gradient (Glossy Premium Blue) -->
+    <linearGradient id="t-stem-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0099ff" />
+      <stop offset="100%" stop-color="#0022aa" />
+    </linearGradient>
+
+    <!-- V Shape Gradient (Glossy 3D White) -->
+    <linearGradient id="v-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="50%" stop-color="#f0f5ff" />
+      <stop offset="100%" stop-color="#d0e0ff" />
+    </linearGradient>
+
+    <!-- Glow/Drop Shadow Filters -->
+    <filter id="glow-effect" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#0077ff" flood-opacity="0.35" />
+    </filter>
+    
+    <filter id="shadow-v" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="-2" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4" />
+    </filter>
+
+    <!-- Shine Gradient for Left-to-Right Animation -->
+    <linearGradient id="shine-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0" />
+      <stop offset="35%" stop-color="#ffffff" stop-opacity="0" />
+      <stop offset="50%" stop-color="#ffffff" stop-opacity="0.75" />
+      <stop offset="65%" stop-color="#ffffff" stop-opacity="0" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+    </linearGradient>
+
+    <!-- Mask to apply shine animation only to T and V shapes -->
+    <mask id="logo-mask">
+      <rect width="512" height="512" fill="black" />
+      <!-- The T Shape inside mask -->
+      <path d="M 115 125 L 350 125 C 353 125, 355 127, 353.5 130 C 352 133, 335 174, 332 180 C 331 182, 329 183, 326 183 L 105 183 C 102 183, 100 182, 98.5 179 L 111.5 132 C 112.5 127, 114 125, 115 125 Z" fill="white" />
+      <path d="M 125 183 C 125 183, 155 183, 163 210 C 168 225, 168 245, 168 260 L 168 350 C 168 385, 218 385, 218 350 L 218 260 L 272 260 L 272 183 Z" fill="white" />
+      <!-- The V Shape inside mask -->
+      <path d="M 228 270 L 228 285 L 292 385 C 294 388, 298 390, 308 390 C 318 390, 322 388, 324 385 L 434 200 C 436 197, 437 195, 434 193 C 431 191, 415 183, 408 183 C 404 183, 401 185, 399 188 L 315 315 C 311 321, 305 321, 301 315 L 242 192 L 263 270 Z" fill="white" />
+    </mask>
+  </defs>
+
+  <style>
+    /* CSS Animations */
+    @keyframes glow-pulse {
+      0% { filter: drop-shadow(0 4px 10px rgba(0, 119, 255, 0.3)); }
+      50% { filter: drop-shadow(0 6px 20px rgba(0, 119, 255, 0.65)); }
+      100% { filter: drop-shadow(0 4px 10px rgba(0, 119, 255, 0.3)); }
+    }
+    
+    @keyframes shine-sweep {
+      0% { transform: translateX(-400px) skewX(-20deg); }
+      25% { transform: translateX(500px) skewX(-20deg); }
+      100% { transform: translateX(500px) skewX(-20deg); }
+    }
+
+    .animated-ring {
+      animation: glow-pulse 4s infinite ease-in-out;
+    }
+
+    .shine-sweep-layer {
+      animation: shine-sweep 5s infinite ease-in-out;
+      transform-origin: center;
+    }
+
+    .logo-group {
+      transform-origin: center;
+      transition: transform 0.3s ease;
+    }
+  </style>
+
+  <!-- Deep Dark Navy Background Circle -->
+  <circle cx="256" cy="256" r="236" fill="url(#bg-grad)" />
+
+  <!-- Glossy Metallic Outer Ring with Glow Pulse -->
+  <circle cx="256" cy="256" r="236" stroke="url(#ring-grad)" stroke-width="12" class="animated-ring" />
+
+  <!-- Logo Group -->
+  <g class="logo-group" filter="url(#glow-effect)">
+    <!-- Blue T Top Bar -->
+    <path d="M 115 125 L 350 125 C 353 125, 355 127, 353.5 130 C 352 133, 335 174, 332 180 C 331 182, 329 183, 326 183 L 105 183 C 102 183, 100 182, 98.5 179 L 111.5 132 C 112.5 127, 114 125, 115 125 Z" fill="url(#t-top-grad)" />
+    
+    <!-- Blue T Curved Vertical Stem -->
+    <path d="M 125 183 C 125 183, 155 183, 163 210 C 168 225, 168 245, 168 260 L 168 350 C 168 385, 218 385, 218 350 L 218 260 L 272 260 L 272 183 Z" fill="url(#t-stem-grad)" />
+
+    <!-- Glossy White V Shape (with drop shadow for 3D overlay depth) -->
+    <path d="M 228 270 L 228 285 L 292 385 C 294 388, 298 390, 308 390 C 318 390, 322 388, 324 385 L 434 200 C 436 197, 437 195, 434 193 C 431 191, 415 183, 408 183 C 404 183, 401 185, 399 188 L 315 315 C 311 321, 305 321, 301 315 L 242 192 L 263 270 Z" fill="url(#v-grad)" filter="url(#shadow-v)" />
+  </g>
+
+  <!-- Masked Shine Sweep Layer (Slashes a light sweep over T and V every few seconds) -->
+  <g mask="url(#logo-mask)">
+    <rect class="shine-sweep-layer" x="-100" y="0" width="200" height="512" fill="url(#shine-grad)" />
+  </g>
+</svg>
